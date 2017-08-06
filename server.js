@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOnw={
+var articleOne={
     tilte:'Article One-Anuja Negi',
     heading:'Article One',
     date:'Aug 6',
