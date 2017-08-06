@@ -1,4 +1,13 @@
-console.log('Loaded!');
+// Counter code
+var button=document.getElementById('counter');
+var c=0;
+button.onclick=function(){
+    c=c+1;
+    var span=document.getElementById('c');
+    span.innerHTML=c.toString();
+}
+
+/*console.log('Loaded!');
 var ele = document.getElementById('main-hi');
 ele.innerHTML='hi!';
 var img=documnet.getElementById('o');
@@ -9,4 +18,4 @@ function moveRight(){
 }
 img.onclick=function(){
     var m=setInterval(moveRight,50);
-}
+}*/
