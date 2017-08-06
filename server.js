@@ -93,7 +93,7 @@ app.get('/', function (req, res) {
 var c=0;
 app.get('/counter',function(req,res){
    c=c+1;
-   res.send(c,toString());
+   res.send(c.toString());
 });
 
 app.get('/:articleName',function(req,res){
