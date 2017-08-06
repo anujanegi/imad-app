@@ -90,6 +90,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var c=0;
+app.get('/counter',function(req,res){
+   c=c+1;
+   res.send(c,toString());
+});
+
 app.get('/:articleName',function(req,res){
     //articleName==article-one
     var articleName=req.params.articleName;  //functionality of express
