@@ -5,6 +5,23 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOnw={
+    tilte:'Article One-Anuja Negi',
+    heading:'Article One',
+    date:'Aug 6',
+    content:`
+            <p>
+                Article content.Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. 
+            </p>
+            <p>
+                Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. 
+            </p>
+            <p>
+                Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. v
+            </p>`
+};
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
