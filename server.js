@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articleOne={
-    tilte:'Article One-Anuja Negi',
+    title:'Article One-Anuja Negi',
     heading:'Article One',
     date:'Aug 6',
     content:`
