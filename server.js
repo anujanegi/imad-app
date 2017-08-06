@@ -5,11 +5,27 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
-    title:'Article One-Anuja Negi',
-    heading:'Article One',
-    date:'Aug 6',
-    content:`
+var articles = {
+    articleOne: {
+        title:'Article One-Anuja Negi',
+        heading:'Article One',
+        date:'Aug 6',
+        content:`
+                <p>
+                    Article content.Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. 
+                </p>
+                <p>
+                    Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. 
+                </p>
+                <p>
+                    Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. v
+                </p>`
+          },
+    articleTwo: {
+            title:'Article Two-Anuja Negi',
+            heading:'Article Two',
+            date:'Aug 10',
+            content:`
             <p>
                 Article content.Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. 
             </p>
@@ -17,8 +33,25 @@ var articleOne={
                 Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. 
             </p>
             <p>
+
                 Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. v
             </p>`
+    },
+    articleThree: {
+            title:'Article Three-Anuja Negi',
+            heading:'Article Three',
+            date:'Aug 15',
+            content:`
+                    <p>
+                        Article content.Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. 
+                    </p>
+                    <p>
+                        Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. 
+                    </p>
+                    <p>
+                        Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. Article content. v
+                    </p>`
+            }
 };
 
 function createTemplate(data){
@@ -60,12 +93,15 @@ app.get('/', function (req, res) {
 app.get('/article-one',function(req,res){
     res.send(createTemplate(articleOne));
 });
+
 app.get('/article-two',function(req,res){
     res.sendFile(path.join(__dirname,'ui','article-two.html'));
 });
+
 app.get('/article-three',function(req,res){
     res.sendFile(path.join(__dirname,'ui','article-three.html'));
 });
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
