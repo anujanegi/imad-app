@@ -1,12 +1,25 @@
 // Counter code
 var button=document.getElementById('counter');
-var c=0;
-button.onclick=function(){
-    c=c+1;
-    var span=document.getElementById('c');
-    span.innerHTML=c.toString();
-}
 
+button.onclick=function(){
+   
+//request object
+var request=new XMLHttpRequest();
+
+//capture the response and store in variable
+request.onreadystatechange=function(){
+    if(request.readyState===XMLHttpRequest.DONE){
+        if(request.status===200)
+        {
+            var c=request.responseText;
+            var span=document.getElementById('c');
+            span.innerHTML=c.toString();
+        }
+    }
+};
+request.open('GET','hhtp://anujanegi1@imad.hasura-app.io/counter');
+request.send(null);
+};
 /*console.log('Loaded!');
 var ele = document.getElementById('main-hi');
 ele.innerHTML='hi!';
