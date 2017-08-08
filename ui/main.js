@@ -32,3 +32,18 @@ function moveRight(){
 img.onclick=function(){
     var m=setInterval(moveRight,50);
 }*/
+
+
+//submit name
+var n=documnet.getElementById('name');
+var name=n.value;
+var submit=document.getElementIdBy('submit_btn');
+submit_btn.onclick=funtion(){
+  var names=['name1','name2','name3'];
+  var list='';
+  for(var i=0;i<names.length;i++){
+      list+='<li>+names[i]+</li>';
+  }
+  var ul=document.getElementById('list');
+  ul.innerHTML=list;
+};
