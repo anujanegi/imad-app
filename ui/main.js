@@ -35,8 +35,6 @@ img.onclick=function(){
 
 
 //submit name
-var n=documnet.getElementById('name');
-var nam=n.value;
 var submit=document.getElementIdBy('submit_btn');
 
 submit.onclick=function(){
@@ -56,7 +54,9 @@ submit.onclick=function(){
                 ul.innerHTML=list;
             }
         }
-    };
-    request.open('GET','http://anujanegi1.imad.hasura-app.io/submit-name?name='+name,true);
+        };
+    var n=document.getElementById('name');
+    var nam=n.value;
+    request.open('GET','http://anujanegi1.imad.hasura-app.io/submit-name?name='+nam,true);
     request.send(null);
 };
