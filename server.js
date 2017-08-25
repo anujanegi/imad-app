@@ -8,7 +8,7 @@ var config ={
     database:'anujanegi1',
     host:'db.imad.hasura-app.io',
     port:'5432',
-    password:process.env.DB_PASSWORD
+    password:process.env.DB_PASSWORD  //environment variable
 };
 
 var app = express();
@@ -101,11 +101,11 @@ app.get('/', function (req, res) {
 
 var pool= new Pool(config);
 app.get('/test-db', function(req, res){
-    pool.query('select * from user',function(err,result){
+    pool.query('select * from test',function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }else{
-            res.send(JSON.stringify(rsult));
+            res.send(JSON.stringify(result));
         }
     });
 });
