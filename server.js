@@ -119,7 +119,7 @@ app.post('/create-user',function(res,req){
 app.post('/login', function(req,res){
     var username=req.body.username;
     var password=req.body.password;
-    pool.query('select * from "user" username=$1', [username], function(er,result){
+    pool.query('select * from where "user" username=$1', [username], function(er,result){
         if(err){
             res.status(500).send(err.toString());
         }else{
