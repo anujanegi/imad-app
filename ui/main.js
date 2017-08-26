@@ -36,7 +36,7 @@ img.onclick=function(){
 
 //submit name
 
-var submit=document.getElementIdBy('submit_btn');
+var submit=document.getElementById('submit_btn');
 
 submit.onclick=function(){
     var request=new XMLHttpRequest();
